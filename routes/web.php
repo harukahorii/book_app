@@ -22,6 +22,11 @@ Route::group(['middleware' => ['web']], function () {
             'books' => $books
         ]);
     }]);
+    Route::get('/new', ['middleware' => 'auth',function(){
+        return view('new',[
+            // 'books' => $books
+        ]);
+    }]);
     // 多分ここのbookはpostした後の行き先
     Route::post('/book', ['middleware' => 'auth',function(Request $request){
         $validator = Validator::make($request->all(), [
