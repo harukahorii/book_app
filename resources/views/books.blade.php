@@ -2,7 +2,13 @@
 
 @section('content')
 	<div class="container">
+		<div class="btn-green">
+			<a href="/new" class="btn btn-outline-success btn-green">
+				{{ __('本を投稿する') }}
+			</a>
+		</div>
 		<div class="col-sm-offset-2 col-sm-8">
+			
 			
 
 			<!-- Books -->
