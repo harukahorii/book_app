@@ -26,13 +26,29 @@
             </div>
 
             <div class="form-group">
-              <label for="task-name" class="col-sm-3 control-label">感想</label>
+              <label for="task-name" class="col-sm-3 control-label">感想または学び</label>
 
               <div class="col-sm-6">
-                <textarea type="text" name="body"  class="form-control" value="{{ old('book') }}">
+                <textarea type="text" name="body"  class=" big-box" value="{{ old('book') }}">
                 </textarea>
               </div>
             </div>
+            <div class="form-group">
+              <label for="task-name" class="col-sm-3 control-label">本から得たことでやってみたいこと</label>
+
+              <div class="col-sm-6">
+                <textarea type="text" name="todo"  class=" big-box" value="{{ old('book') }}">
+                </textarea>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="task-name" class="col-sm-3 control-label">いつまでにやる？</label>
+
+              <div class="col-sm-6">
+                <input type="date" name="limit"  class="form-control" value="{{ old('book') }}">
+              </div>
+            </div>
+
 
             <!-- Add Book Button -->
             <div class="form-group">

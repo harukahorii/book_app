@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddBodyToBooksTable extends Migration
+class ChangeBooksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,8 +14,8 @@ class AddBodyToBooksTable extends Migration
     public function up()
     {
         Schema::table('books', function (Blueprint $table) {
-            $table->string('body')->default("");
-            
+            $table->text('body')->change();
+            $table->text('todo')->change();
         });
     }
 
@@ -27,7 +27,8 @@ class AddBodyToBooksTable extends Migration
     public function down()
     {
         Schema::table('books', function (Blueprint $table) {
-            
+            $table->string('body')->change();
+            $table->string('todo')->change();
         });
     }
 }
