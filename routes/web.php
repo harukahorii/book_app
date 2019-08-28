@@ -43,7 +43,7 @@ Route::group(['middleware' => ['web']], function () {
         $book->title = $request->name;
         $book->body = $request->body;
         $book->todo = $request->todo;
-        $book->limit = 
+        $book->limit = $request->limit;
         $book->save();
         // 保存した後の行き先
         return redirect('/');
