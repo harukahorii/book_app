@@ -25,6 +25,15 @@
               </div>
             </div>
 
+            <div class="form-group">
+              <label for="task-name" class="col-sm-3 control-label">感想</label>
+
+              <div class="col-sm-6">
+                <textarea type="text" name="body"  class="form-control" value="{{ old('book') }}">
+                </textarea>
+              </div>
+            </div>
+
             <!-- Add Book Button -->
             <div class="form-group">
               <div class="col-sm-offset-3 col-sm-6">
