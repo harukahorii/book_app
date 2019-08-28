@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddTextToBooksTable extends Migration
+class AddBodyToBooksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,6 +14,7 @@ class AddTextToBooksTable extends Migration
     public function up()
     {
         Schema::table('books', function (Blueprint $table) {
+            $table->string('body')->default("");
             
         });
     }
