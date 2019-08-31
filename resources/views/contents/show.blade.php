@@ -16,35 +16,28 @@
           <form action="/book" method="POST" class="form-horizontal">
             {{ csrf_field() }}
 
-            <!-- Book Name -->
-            <div class="form-group">
-              <label for="task-name" class="col-sm-3 control-label">Book</label>
-
-              <div class="col-sm-6">
-                <input type="text" name="name" id="book-name" class="form-control" value="{{ old('book') }}">
-              </div>
-            </div>
+            
 
             <div class="form-group">
-              <label for="task-name" class="col-sm-3 control-label">感想または学び</label>
+              <label for="task-name" class="control-label">感想または学び</label>
 
-              <div class="col-sm-6">
+              <div>
                 <textarea type="text" name="body"  class="big-box" value="{{ old('book') }}">
                 </textarea>
               </div>
             </div>
-            <div class="form-group">
-              <label for="task-name" class="col-sm-3 control-label">本から得たことでやってみたいこと</label>
+            <div>
+              <label for="task-name" class="control-label">本から得たことでやってみたいこと</label>
 
-              <div class="col-sm-6">
+              <div>
                 <textarea type="text" name="todo"  class="big-box" value="{{ old('book') }}">
                 </textarea>
               </div>
             </div>
             <div class="form-group">
-              <label for="task-name" class="col-sm-3 control-label">いつまでにやる？</label>
+              <label for="task-name" class="control-label">いつまでにやる？</label>
 
-              <div class="col-sm-6">
+              <div>
                 <input type="date" name="limit"  class="form-control" value="{{ old('book') }}">
               </div>
             </div>
