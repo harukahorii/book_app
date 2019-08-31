@@ -5,7 +5,7 @@
 		<div class="col-sm-offset-2 col-sm-8">
       <div class="panel panel-default">
         <div class="panel-heading">
-          New Book
+          {{ $data->title }}
         </div>
 
         <div class="panel-body">
@@ -13,36 +13,36 @@
           @include('common.errors')
 
           <!-- New Book Form -->
-          <form action="/book" method="POST" class="form-horizontal">
-            {{ csrf_field() }}
 
-            
-            <div class="content">
+          {{ csrf_field() }}
 
-              <div class="form-group">
-                <label for="task-name" class="control-label">感想または学び</label>
+
+          <div class="content">
+
+            <div class="form-group">
+              <label for="task-name" class="control-label">感想または学び</label>
+              <div class="text-box">
+                <textarea type="text" name="body">
+                </textarea>
+              </div>
+            </div>
+            <div class="form-group">
+              <div>
+                <label for="task-name" class="control-label">本から得たことでやってみたいこと</label>
                 <div class="text-box">
-                  <textarea type="text" name="body" value="{{ old('book') }}">
+                  <textarea type="text" name="todo">
                   </textarea>
                 </div>
               </div>
-              <div class="form-group">
-                <div>
-                  <label for="task-name" class="control-label">本から得たことでやってみたいこと</label>
-                  <div class="text-box">
-                    <textarea type="text" name="todo" value="{{ old('book') }}">
-                    </textarea>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="task-name" class="control-label">この日までにやりたい</label>
+            </div>
+            <div class="form-group">
+              <label for="task-name" class="control-label">この日までにやりたい</label>
 
-                <div class="text-box">
-                  <input type="date" name="limit"  class="form-control" value="{{ old('book') }}">
-                </div>
+              <div class="text-box">
+                <input type="date" name="limit"  class="form-control">
               </div>
             </div>
+          </div>
 
             <!-- Add Book Button -->
             <div class="form-group">
@@ -52,7 +52,6 @@
                 </button>
               </div>
             </div>
-          </form>
         </div>
       </div>
     </div>

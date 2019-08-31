@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Book;
 
 class ContentsController extends Controller
 {
@@ -13,7 +14,7 @@ class ContentsController extends Controller
      */
     public function index()
     {
-        return view('contents/show', ['message' => 'Hello!']);
+        // return view('contents/show', ['message' => 'Hello!']);
     }
 
     /**
@@ -45,7 +46,8 @@ class ContentsController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = Book::where('id', $id)->get();
+        return view('contents/show', ['data' => $data ]);
     }
 
     /**
