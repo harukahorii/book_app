@@ -17,37 +17,38 @@
             {{ csrf_field() }}
 
             
+            <div class="content">
 
-            <div class="form-group">
-              <label for="task-name" class="control-label">感想または学び</label>
+              <div class="form-group">
+                <label for="task-name" class="control-label">感想または学び</label>
+                <div class="text-box">
+                  <textarea type="text" name="body" value="{{ old('book') }}">
+                  </textarea>
+                </div>
+              </div>
+              <div class="form-group">
+                <div>
+                  <label for="task-name" class="control-label">本から得たことでやってみたいこと</label>
+                  <div class="text-box">
+                    <textarea type="text" name="todo" value="{{ old('book') }}">
+                    </textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="task-name" class="control-label">この日までにやりたい</label>
 
-              <div>
-                <textarea type="text" name="body"  class="big-box" value="{{ old('book') }}">
-                </textarea>
+                <div class="text-box">
+                  <input type="date" name="limit"  class="form-control" value="{{ old('book') }}">
+                </div>
               </div>
             </div>
-            <div>
-              <label for="task-name" class="control-label">本から得たことでやってみたいこと</label>
-
-              <div>
-                <textarea type="text" name="todo"  class="big-box" value="{{ old('book') }}">
-                </textarea>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="task-name" class="control-label">いつまでにやる？</label>
-
-              <div>
-                <input type="date" name="limit"  class="form-control" value="{{ old('book') }}">
-              </div>
-            </div>
-
 
             <!-- Add Book Button -->
             <div class="form-group">
               <div class="col-sm-offset-3 col-sm-6">
                 <button type="submit" class="btn btn-default">
-                  <i class="fa fa-plus"></i>本を追加する
+                  <i class="fa fa-edit"></i>編集する
                 </button>
               </div>
             </div>
