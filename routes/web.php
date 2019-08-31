@@ -49,6 +49,8 @@ Route::group(['middleware' => ['web']], function () {
         return redirect('/');
     }]);
 
+    Route::resource('contents', 'ContentsController');
+
     Route::delete('/book/{book}', ['middleware' => 'auth',function(Book $book){
         $book->delete();
 
