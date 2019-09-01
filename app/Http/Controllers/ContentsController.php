@@ -55,8 +55,8 @@ class ContentsController extends Controller
      */
     public function show($id)
     {
-        // $book = Book::find($id);
-        // return view('contents/show')->with('book',$book);
+        $book = Book::find($id);
+        return view('contents/show')->with('book',$book);
     }
 
     /**
@@ -67,7 +67,8 @@ class ContentsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $book = Book::find($id);
+        return view('contents/update')->with('book',$book);
     }
 
     /**
@@ -79,7 +80,14 @@ class ContentsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $book = Book::find($id);
+        $book->title = $request->input('title');
+        $book->body = $request->input('body');
+        $book->todo = $request->input('todo');
+        $book->limit = $request->input('limit');
+        $book->save();
+        // 保存した後の行き先
+        return redirect('/');
     }
 
     /**
@@ -90,6 +98,6 @@ class ContentsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
     }
 }
