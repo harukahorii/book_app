@@ -5,7 +5,7 @@
 		<div class="col-sm-offset-2 col-sm-8">
       <div class="panel panel-default">
         <div class="panel-heading">
-          {{ $data->title }}
+          {{ $book->title }}
         </div>
 
         <div class="panel-body">
@@ -22,16 +22,14 @@
             <div class="form-group">
               <label for="task-name" class="control-label">感想または学び</label>
               <div class="text-box">
-                <textarea type="text" name="body">
-                </textarea>
+              {{ $book->body }}
               </div>
             </div>
             <div class="form-group">
               <div>
                 <label for="task-name" class="control-label">本から得たことでやってみたいこと</label>
                 <div class="text-box">
-                  <textarea type="text" name="todo">
-                  </textarea>
+                {{ $book->todo }}
                 </div>
               </div>
             </div>
@@ -39,7 +37,7 @@
               <label for="task-name" class="control-label">この日までにやりたい</label>
 
               <div class="text-box">
-                <input type="date" name="limit"  class="form-control">
+              {{ $book->limit }}
               </div>
             </div>
           </div>

@@ -51,6 +51,9 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::resource('contents', 'ContentsController');
 
+    Route::get('content/{id}', 'ContentsController@show');
+    Route::get('content/{id}', 'ContentsController@edit');
+
     Route::delete('/book/{book}', ['middleware' => 'auth',function(Book $book){
         $book->delete();
 

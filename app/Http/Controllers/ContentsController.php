@@ -46,8 +46,8 @@ class ContentsController extends Controller
      */
     public function show($id)
     {
-        $data = Book::where('id', $id)->get();
-        return view('contents/show', ['data' => $data ]);
+        $book = Book::find($id);
+        return view('contents/show')->with('book',$book);
     }
 
     /**

@@ -27,7 +27,9 @@
 							<tbody>
 								@foreach ($books as $book)
 									<tr>
-										<td class="table-text"><div>{{ $book->title }}</div></td>
+										<td class="table-text">
+											<a href="/contents/{{ $book->id }}">{{ $book->title }}</a>
+										</td>
 
 										<!-- Task Delete Button -->
 										<td>
