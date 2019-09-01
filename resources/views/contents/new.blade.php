@@ -21,7 +21,7 @@
               <label for="task-name" class="col-sm-3 control-label">Book</label>
 
               <div class="col-sm-6">
-                <input type="text" name="name" id="book-name" class="form-control" value="{{ old('book') }}">
+                <input type="text" name="title" id="book-name" class="form-control" value="{{ old('book') }}">
               </div>
             </div>
 

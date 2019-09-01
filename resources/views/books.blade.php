@@ -3,7 +3,7 @@
 @section('content')
 	<div class="container">
 		<div class="btn-green">
-			<a href="/new" class="btn btn-outline-success btn-green">
+			<a href="contents/new" class="btn btn-outline-success btn-green">
 				{{ __('本を投稿する') }}
 			</a>
 		</div>

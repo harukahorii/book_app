@@ -14,7 +14,7 @@ class ContentsController extends Controller
      */
     public function index()
     {
-        // return view('contents/show', ['message' => 'Hello!']);
+       
     }
 
     /**
@@ -24,7 +24,9 @@ class ContentsController extends Controller
      */
     public function create()
     {
-        //
+        return view('contents/new',[
+            
+        ]);
     }
 
     /**
@@ -35,7 +37,14 @@ class ContentsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $book = new Book;
+        $book->title = $request->title;
+        $book->body = $request->body;
+        $book->todo = $request->todo;
+        $book->limit = $request->limit;
+        $book->save();
+        // 保存した後の行き先
+        return redirect('/');
     }
 
     /**
@@ -46,8 +55,8 @@ class ContentsController extends Controller
      */
     public function show($id)
     {
-        $book = Book::find($id);
-        return view('contents/show')->with('book',$book);
+        // $book = Book::find($id);
+        // return view('contents/show')->with('book',$book);
     }
 
     /**
