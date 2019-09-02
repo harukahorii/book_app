@@ -13,7 +13,7 @@
           @include('common.errors')
 
           <!-- New Book Form -->
-          <form action="/contents/update" method="PATCH" class="form-horizontal">
+          <form action="/book/{{ $book->id }}" method="POST" class="form-horizontal">
             {{ csrf_field() }}
 
             <!-- Book Name -->
@@ -30,7 +30,7 @@
               <label for="task-name" class="col-sm-3 control-label">感想または学び</label>
 
               <div class="col-sm-6">
-                <textarea type="text" name="body"  class=" big-box" value="{{ old('book') }}">{{ $book->body }}
+                <textarea type="text" name="body"  class=" big-box">{{ $book->body }}
                 </textarea>
               </div>
             </div>
@@ -38,7 +38,7 @@
               <label for="task-name" class="col-sm-3 control-label">本から得たことでやってみたいこと</label>
 
               <div class="col-sm-6">
-                <textarea type="text" name="todo"  class=" big-box" value="{{ old('book') }}">{{ $book->todo }}
+                <textarea type="text" name="todo"  class=" big-box">{{ $book->todo }}
                 </textarea>
               </div>
             </div>

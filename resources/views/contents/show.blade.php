@@ -45,8 +45,10 @@
             <!-- Add Book Button -->
             <div class="form-group">
               <div class="col-sm-offset-3 col-sm-6">
-                <button type="submit" class="btn btn-default">
-                  <i class="fa fa-edit"></i>編集する
+                <button class="btn btn-default">
+                  <a href="{{ $book->id }}/update">
+                    <i class="fa fa-edit"></i>編集する
+                  </a>
                 </button>
               </div>
             </div>

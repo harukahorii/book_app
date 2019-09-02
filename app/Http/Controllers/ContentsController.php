@@ -81,10 +81,10 @@ class ContentsController extends Controller
     public function update(Request $request, $id)
     {
         $book = Book::find($id);
-        $book->title = $request->input('title');
-        $book->body = $request->input('body');
-        $book->todo = $request->input('todo');
-        $book->limit = $request->input('limit');
+        $book->title = $request->title;
+        $book->body = $request->body;
+        $book->todo = $request->todo;
+        $book->limit = $request->limit;
         $book->save();
         // 保存した後の行き先
         return redirect('/');

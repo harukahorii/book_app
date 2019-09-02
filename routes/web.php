@@ -23,14 +23,13 @@ Route::group(['middleware' => ['web']], function () {
         ]);
     }]);
 
+    
     Route::resource('contents', 'ContentsController');
-
-
     Route::get('contents/new', 'ContentsController@create');
     Route::post('/book','ContentsController@store');
     Route::get('contents/{id}/show', 'ContentsController@show');
     Route::get('contents/{id}/update', 'ContentsController@edit');
-    Route::patch('contents/{id}/update', 'ContentsController@update');
+    Route::post('/book/{book}', 'ContentsController@update');
 
     Route::delete('/book/{book}', ['middleware' => 'auth',function(Book $book){
         $book->delete();
