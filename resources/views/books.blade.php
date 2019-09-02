@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+	<div id="app">
+		<p><button v-on:click="show=!show">切り替え</button></p>
+		<transition>
+	</div>
 	<div class="container">
 		<div class="btn-green">
 			<a href="contents/new" class="btn btn-outline-success btn-green">

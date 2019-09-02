@@ -23,11 +23,11 @@ Route::group(['middleware' => ['web']], function () {
         ]);
     }]);
 
-    
-    Route::resource('contents', 'ContentsController');
+
+
     Route::get('contents/new', 'ContentsController@create');
     Route::post('/book','ContentsController@store');
-    Route::get('contents/{id}/show', 'ContentsController@show');
+    Route::get('contents/{id}', 'ContentsController@show');
     Route::get('contents/{id}/update', 'ContentsController@edit');
     Route::post('/book/{book}', 'ContentsController@update');
 
